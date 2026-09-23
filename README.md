@@ -243,7 +243,7 @@ chmod +x install.sh uninstall.sh
 
 ## 💬 官方交流社区
 
-> 📌 **严禁任何主体用于商业售卖、付费倒卖或黑灰产牟利，仅供技术参考。**
+> 📌 **非盈利公益项目，严禁任何主体用于商业售卖、付费倒卖或黑灰产牟利，仅供技术参考。**
 
 <p align="center">
   <img src="./assets/community.jpg" width="240" alt="DeepSeek网安逆攻防技术交流社区" /><br>
