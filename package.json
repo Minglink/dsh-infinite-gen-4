@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/Minglink/dsh-infinite-gen-4.git"
   },
+  "license": "CC-BY-NC-SA-4.0",
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",

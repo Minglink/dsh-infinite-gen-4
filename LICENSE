@@ -1,21 +1,49 @@
-MIT License
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 
-Copyright (c) 2026 Minglink
+Copyright (c) 2026 Minglink (https://github.com/Minglink/dsh-infinite-gen-4)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+================================================================================
+【特别声明与法律限制条款 / Special Terms and Anti-Commercial Restrictions】
+================================================================================
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+本项目采用 CC BY-NC-SA 4.0（署名-非商业性使用-相同方式共享 4.0 国际许可协议）进行开源授权，并附加以下具有法律约束力的严正条款：
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. 🚫 严禁任何直接商业使用（Strictly No Commercial Use）
+   任何个人、组织、团队或企业严禁将本项目（包括但不限于源代码、双层注入内核、提示词资产、脚本、二进制包、分发包及文档等）用于任何形式的直接商业活动，包括但不限于：
+   - 商业售卖、付费下载、倒卖、转售；
+   - 捆绑销售、会员制付费访问或设立任何形式的付费门槛；
+   - 提供基于本项目的付费代部署、收费咨询或营利性培训；
+   - 用于任何形式的黑灰产牟利活动。
+
+2. 🚫 严禁二次开发商业化与闭源售卖（Strictly No Commercial Derivative Works）
+   任何主体对本项目进行 Fork、代码修改、重构、二次开发、功能提取或将其作为组件嵌入其他软件时：
+   - 必须严格继承并遵守 CC BY-NC-SA 4.0 非商业性开源协议；
+   - 严禁将任何二次开发或衍生作品用于任何商业营利目的；
+   - 严禁将本项目二次开发后闭源、私有化售卖或用于提供付费 SaaS 商业服务；
+   - 二次开发作品商用均被认定为严重侵权与违法违规行为。
+
+3. ⚖️ 违约终止与侵权法律责任（License Termination & Legal Liabilities）
+   - 任何主体一旦违反上述非商业性使用与禁止二次开发商用条款，其对本项目及衍生作品的使用、分发授权将【自动且不可撤销地立即终止】；
+   - 违约主体必须立即停止侵权行为，并销毁所有非法复制、修改或衍生版本；
+   - 项目版权所有者保留通过法律途径（包括但不限于向法院提起侵权诉讼、要求损害赔偿、向主管部门进行行政举报等）全面追究侵权方民事、行政及刑事责任的一切权利。
+
+4. 🛡️ 免责声明（Disclaimer of Warranties）
+   本项目按“原样（AS-IS）”提供，不提供任何明示或暗示的保证。在任何情况下，作者均不对因使用或无法使用本项目所产生的任何直接、间接、偶然、特殊或附带损失承担责任。
+
+================================================================================
+【CC BY-NC-SA 4.0 核心要点 / Core License Summary】
+================================================================================
+
+Under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License:
+
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- NonCommercial — You may not use the material for commercial purposes.
+- ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+- No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+For full license text, visit: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
