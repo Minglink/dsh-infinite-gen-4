@@ -78,15 +78,15 @@ const anchors = [
   ["hydra -L users.txt -P pass.txt", "锚点: 词表爆破"],
   ["http-post-form", "锚点: hydra 表单模式"],
   ["代理池", "锚点: 代理池提速"],
-  ["ROLE_A", "锚点: ROLE_A"],
-  ["ROLE_B", "锚点: ROLE_B"],
+  ["Frida 动态分析脚本", "锚点: Frida 动态分析"],
+  ["Java.perform", "锚点: Java.perform"],
 ];
 for (const [needle, label] of anchors) mustContain(prompt, needle, label);
 check(
-  ["TARGET", "HOST", "TOKEN", "OFFSET", "PAYLOAD", "SERIAL", "ROLE_A", "ROLE_B"].every((n) =>
+  ["TARGET", "HOST", "TOKEN", "OFFSET", "PAYLOAD", "SERIAL", "SYMBOL", "HOOK_FN"].every((n) =>
     prompt.includes(n),
   ),
-  "锚点: 占位符族（TARGET/HOST/TOKEN/OFFSET/PAYLOAD/SERIAL）",
+  "锚点: 占位符族（TARGET/HOST/TOKEN/OFFSET/PAYLOAD/SERIAL/SYMBOL/HOOK_FN）",
 );
 
 // ---- 4. 用例库结构完整性 ----

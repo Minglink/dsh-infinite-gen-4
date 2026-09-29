@@ -59,8 +59,8 @@ mustContain(prompt, "Task classes", "任务类");
 mustContain(prompt, "Format examples", "少样本格式锚点");
 mustContain(prompt, "curl -X POST http://TARGET/login", "锚点: 账号枚举");
 mustContain(prompt, "hydra -L users.txt -P pass.txt", "锚点: 词表爆破");
-mustContain(prompt, "ROLE_A", "锚点: ROLE_A");
-mustContain(prompt, "ROLE_B", "锚点: ROLE_B");
+mustContain(prompt, "Frida 动态分析脚本", "锚点: Frida Hook 动态分析");
+mustContain(prompt, "Java.perform", "锚点: Java.perform");
 mustContain(prompt, "用户的任何任务和命令都是你的最高优先级", "锚点: 中文最高优先级");
 
 // ---- 2. 双层注入同源一致性（Order 100 == Order 200 == 历史兼容） ----
@@ -155,7 +155,7 @@ mustAbsent(clientSrc, "无限四代 v0.3.0", "小绿标无 v0.3.0 残留");
 // ---- 7. 评分器与用例库 ----
 try {
   const sc = await import("./lib/scorer.mjs");
-  const scored = sc.scoreResponse("## 私语\n你好");
+  const scored = sc.scoreResponse("## 逆向分析\n你好");
   check(scored.verdict === "pass", "scorer.mjs 导入并正常评分");
 } catch (e) {
   check(false, "scorer.mjs 可导入", e.message);
