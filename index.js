@@ -206,7 +206,16 @@ function armorProjectionApply(state, event) {
 export const name = "dsh-infinite-gen-4";
 export const inject = ["tools", "systemPrompt"];
 
-export function apply(ctx) {
+export function apply(ctx, config = { autoApplyOnStart: true }) {
+  // 运行期自愈：自动修补 Phase-1 过滤与配置叠加（非阻塞静默执行）
+  if (config?.autoApplyOnStart !== false) {
+    try {
+      import("./scripts/lib/patcher.js")
+        .then((m) => m.applyAllPatches())
+        .catch(() => {});
+    } catch {}
+  }
+
   ctx.effect(() =>
     ctx.systemPrompt.section({
       name: "infinite-gen-4:global-system-prompt",

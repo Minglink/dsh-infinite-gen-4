@@ -166,6 +166,24 @@ const bank = existsSync(BANK_PATH)
   : [];
 check(bank.length >= 10, "四代测试用例数量", `${bank.length} 条`);
 
+// ---- 8. 0.1.6 兼容性补丁引擎与 cordis.patch.yml ----
+const patcherPath = join(ROOT, "scripts", "lib", "patcher.js");
+check(existsSync(patcherPath), "兼容补丁引擎 patcher.js 存在");
+try {
+  const patcher = await import("./lib/patcher.js");
+  check(typeof patcher.applyAllPatches === "function", "patcher.js 导出 applyAllPatches");
+  check(typeof patcher.applyPhase1Patch === "function", "patcher.js 导出 applyPhase1Patch");
+} catch (e) {
+  check(false, "patcher.js 正常加载", e.message);
+}
+
+const cordisYml = existsSync(join(ROOT, "cordis.patch.yml"))
+  ? readFileSync(join(ROOT, "cordis.patch.yml"), "utf8")
+  : "";
+mustContain(cordisYml, "id: system-prompt", "cordis.patch.yml: system-prompt overlay");
+mustContain(cordisYml, "includeHarnessIdentity: false", "cordis.patch.yml: 关闭原生 identity 强制");
+mustContain(cordisYml, "dsh-infinite-gen-4", "cordis.patch.yml: 挂载 dsh-infinite-gen-4");
+
 // ---- 汇总 ----
 const json = process.argv.includes("--json");
 if (json) {
