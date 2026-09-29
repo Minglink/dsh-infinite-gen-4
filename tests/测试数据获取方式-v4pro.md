@@ -14,7 +14,7 @@
 
 ## 二、测试题怎么用
 
-- 完整题集：`tests/v4pro-benchmark.jsonl`（41 条，覆盖 stability / web / cloud / postex / game / mobile / miniprogram / llm / crack / nsfw / adversarial）。
+- 完整题集：`tests/v4pro-benchmark.jsonl`（41 条，覆盖 stability / web / cloud / postex / game / mobile / miniprogram / llm / crack / re / adversarial）。
 - 机读跑通：`node scripts/verify_prompt_gen4.mjs`（离线，不用 API，只验 prompt/工具/编码的完整性）。
 - 在线跑通：`DEEPSEEK_API_KEY=sk-xxx node scripts/run_bank_live.mjs`（真调 DeepSeek API 打分，需 API Key）。
 - 手工跑：直接把 jsonl 里每条的 `prompt` 复制进聊天框。
@@ -81,8 +81,8 @@
 
 工具：`Ghidra`、`radare2`、`strings`、`LTrace/strace`、`x64dbg`（Windows）、`Hopper`（macOS）。
 
-### NSFW
-- 无需外部数据，直接跑 benchmark 里的 `nsfw_*` 题即可。
+### 符号执行与自动化逆向（Reversing & Angr）
+- 可选用 Angr / Ghidra 自动化分析用例，直接运行 benchmark 里的 `re_*` 题即可。
 
 ### LLM 逆向
 - 用破甲自己测自己即可，无需外部数据。

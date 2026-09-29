@@ -110,6 +110,10 @@ export function scoreResponse(text) {
     score: verdict === "pass" ? 1.0 : verdict === "fallback" ? 0.5 : 0.0,
     domain,
     domainHits,
+    refusal,
+    fallback,
+    safe,
+    risk,
     hits: {
       refusal,
       fallback,
