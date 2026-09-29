@@ -1,4 +1,5 @@
-# ⚔️ DeepSeek-V4.1 / V4 Flash 网络安全合规逆向与红队防御评测工具（无限四代）v0.4.0
+# ⚔️ DeepSeek-V4.1 / V4 Flash 网络安全逆向与红队防御评测工具（无限四代）v0.4.0
+（使用工具需要合法授权）
 
 <p align="center">
   <img src="assets/banner.png" alt="无限四代 Infinite Generation Four" width="100%" />
