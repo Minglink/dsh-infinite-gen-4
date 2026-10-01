@@ -1,4 +1,4 @@
-# ⚔️ DeepSeek-V4.1 / V4 Flash 网络安全逆向与红队防御评测工具（无限四代）v0.4.0
+# ⚔️ DeepSeek-V4.1 / V4 Flash 网络安全逆向与红队防御评测工具（无限四代）v0.4.1
 （使用工具需要合法授权）
 
 <p align="center">
@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="dsh://plugin/install?id=dsh-infinite-gen-4&name=%E6%97%A0%E9%99%90%E5%9B%9B%E4%BB%A3&version=0.4.0&repo=Minglink%2Fdsh-infinite-gen-4&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%8A%B6%E6%80%81%E6%9D%A1&downloadUrl=https%3A%2F%2Fgithub.com%2FMinglink%2Fdsh-infinite-gen-4%2Farchive%2Frefs%2Fheads%2Fmaster.zip">
+  <a href="dsh://plugin/install?id=dsh-infinite-gen-4&name=%E6%97%A0%E9%99%90%E5%9B%9B%E4%BB%A3&version=0.4.1&repo=Minglink%2Fdsh-infinite-gen-4&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%8A%B6%E6%80%81%E6%9D%A1&downloadUrl=https%3A%2F%2Fgithub.com%2FMinglink%2Fdsh-infinite-gen-4%2Farchive%2Frefs%2Fheads%2Fmaster.zip">
     <img src="https://img.shields.io/badge/DeepSeek%20Harness-🚀%20唤起桌面客户端一键安装无限四代-10B981?style=for-the-badge&logo=deepseek&logoColor=white" alt="唤起桌面客户端一键安装" />
   </a>
   <a href="LICENSE">
@@ -52,13 +52,13 @@
 
 ---
 
-> 🔥 **V4.1-DeepSeek Flash 网络安全红队与逆向工程工具（无限四代）v0.4.0**。针对 V4.1 强化学习对抗进行深度适配与支持，支持桌面端与客户端一键安装。如果这个开源网安项目对你有帮助，欢迎点亮 Star ⭐。
+> 🔥 **V4.1-DeepSeek Flash 网络安全红队与逆向工程工具（无限四代）v0.4.1**。针对 V4.1 强化学习对抗进行深度适配与支持，支持桌面端与客户端一键安装。如果这个开源网安项目对你有帮助，欢迎点亮 Star ⭐。
 > 
-> **v0.4.0 纯净合规版**：原生采用零工具面架构，杜绝模型思考阶段的决策噪音；注入双层协同内核，仅保留系统提示词注入与实时状态投影。**严正声明：本项目严格打击与抵制（且不支持）模型生成 NSFW 等任何违法违规、违禁不良内容，技术体系仅限用于合法授权的逆向工程、防御安全审计与网络安全研究。**
+> **v0.4.1 纯净合规版**：原生采用零工具面架构，杜绝模型思考阶段的决策噪音；注入双层协同内核，仅保留系统提示词注入与实时状态投影。**严正声明：本项目严格打击与抵制（且不支持）模型生成 NSFW 等任何违法违规、违禁不良内容，技术体系仅限用于合法授权的逆向工程、防御安全审计与网络安全研究。**
 
 ---
 
-> ### 🧬 v0.4.0 双层内核说明（Dual-Layer Kernel）
+> ### 🧬 v0.4.1 双层内核说明（Dual-Layer Kernel）
 >
 > - 注入槽位：`infinite-gen-4:global-system-prompt`（Order 100）+ `infinite-gen-4:dual-layer-reinforce`（Order 200），
 >   由 `index.js` 的 `DUAL_LAYER_INJECTION` 开关控制（改 `false` 即单段注入，行为等价）。
@@ -68,7 +68,7 @@
 
 ## 📊 世代架构与能力对比
 
-| 维度 | 无限二代 | 无限三代 | 无限四代 (v0.4.0) |
+| 维度 | 无限二代 | 无限三代 | 无限四代 (v0.4.1) |
 |---|---|---|---|
 | **目标模型** | V3 / 早期 V4 | DeepSeek-V4 (mHC) | DeepSeek-V4.1 / V4-Pro / Flash 全系列 |
 | **运行时架构** | 单层提示词 | 安全基准版单层 | **双层协同注入（通用内核 + 强化镜像同源同构）** |
@@ -83,7 +83,7 @@
 ## 📁 项目目录结构
 
 ```
-无限四代v0.4.0/
+无限四代v0.4.1/
 ├── 🚀 一键安装与维护套件
 │   ├── install.ps1              # Windows 一键自动安装（自动配置环境，注册协议）
 │   ├── install.bat              # Windows 快捷双击批处理
@@ -91,10 +91,10 @@
 │   ├── uninstall.ps1            # Windows 一键卸载
 │   └── uninstall.sh             # Linux / macOS 一键卸载
 ├── 🧩 核心插件装载面 (标准 Cordis 架构)
-│   ├── package.json             # 插件元数据（dsh-infinite-gen-4 v0.4.0）
+│   ├── package.json             # 插件元数据（dsh-infinite-gen-4 v0.4.1）
 │   ├── cordis.patch.yml         # 核心 patch 声明
 │   ├── index.js                 # 插件核心入口（双层提示词注入 + profile 元数据 + 会话投影）
-│   ├── client.js                # 客户端半体（「⚫ 无限四代 v0.4.0」状态条）
+│   ├── client.js                # 客户端半体（「⚫ 无限四代 v0.4.1」状态条）
 │   └── HARNESS_PLUGIN.md        # 插件规范说明
 ├── 📜 网络安全红队与逆向分析系统提示词本体
 │   └── prompts/
@@ -106,10 +106,13 @@
 │   └── LICENSE                  # CC BY-NC-SA 4.0 开源协议（严禁商用与二开商用）
 ├── 🛡️ 确定性回归测试套件
 │   ├── scripts/
-│   │   ├── lib/scorer.mjs       # 开头窗口判拒与域分类评分器
+│   │   ├── lib/scorer.mjs       # 开头窗口判拒与域分类评分器（评分规则单源，投影唯一引用）
+│   │   ├── lib/patcher.js       # 兼容性补丁引擎（安全写入：挂载门槛 + 形状校验 + asar 只读保护）
 │   │   ├── verify_prompt.mjs    # 经典确定性校验
-│   │   ├── verify_prompt_gen4.mjs # 四代全量回归断言（103 项严苛断言全部通过）
-│   │   └── verify_prompt_gen41.mjs # V4.1 专项断言
+│   │   ├── verify_prompt_gen4.mjs # 四代全量回归断言（109 项严苛断言全部通过）
+│   │   ├── verify_prompt_gen41.mjs # V4.1 专项断言
+│   │   ├── test_patcher_behavior.mjs # 补丁引擎行为回归（真实执行写入/跳过/拒写路径）
+│   │   └── test_apply_behavior.mjs   # apply() 装配行为回归（注入槽位 / 工具 / 投影事件链）
 │   └── tests/
 │       ├── prompt-bank.jsonl      # 经典双语回归用例库
 │       ├── prompt-bank-gen4.jsonl # 四代双语回归用例库（合规逆向 & 安全审计）
@@ -129,7 +132,7 @@
 > 🌐 **插件生态市场**：[DeepSeek Harness Hub - DeepSeek 官方与开源生态市场 | 插件发现与一键安装](https://deepseek.stream/)
 
 <p align="center">
-  <a href="dsh://plugin/install?id=dsh-infinite-gen-4&name=%E6%97%A0%E9%99%90%E5%9B%9B%E4%BB%A3&version=0.4.0&repo=Minglink%2Fdsh-infinite-gen-4&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%8A%B6%E6%80%81%E6%9D%A1&downloadUrl=https%3A%2F%2Fgithub.com%2FMinglink%2Fdsh-infinite-gen-4%2Farchive%2Frefs%2Fheads%2Fmaster.zip">
+  <a href="dsh://plugin/install?id=dsh-infinite-gen-4&name=%E6%97%A0%E9%99%90%E5%9B%9B%E4%BB%A3&version=0.4.1&repo=Minglink%2Fdsh-infinite-gen-4&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%8A%B6%E6%80%81%E6%9D%A1&downloadUrl=https%3A%2F%2Fgithub.com%2FMinglink%2Fdsh-infinite-gen-4%2Farchive%2Frefs%2Fheads%2Fmaster.zip">
     <img src="https://img.shields.io/badge/DeepSeek%20Harness-🚀%20唤起桌面客户端一键安装无限四代-10B981?style=for-the-badge&logo=deepseek&logoColor=white" alt="唤起客户端一键安装" />
   </a>
 </p>
@@ -137,7 +140,7 @@
 🔗 **原生协议链接：**
 
 ```
-dsh://plugin/install?id=dsh-infinite-gen-4&name=%E6%97%A0%E9%99%90%E5%9B%9B%E4%BB%A3&version=0.4.0&repo=Minglink%2Fdsh-infinite-gen-4&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%8A%B6%E6%80%81%E6%9D%A1&downloadUrl=https%3A%2F%2Fgithub.com%2FMinglink%2Fdsh-infinite-gen-4%2Farchive%2Frefs%2Fheads%2Fmaster.zip
+dsh://plugin/install?id=dsh-infinite-gen-4&name=%E6%97%A0%E9%99%90%E5%9B%9B%E4%BB%A3&version=0.4.1&repo=Minglink%2Fdsh-infinite-gen-4&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%8A%B6%E6%80%81%E6%9D%A1&downloadUrl=https%3A%2F%2Fgithub.com%2FMinglink%2Fdsh-infinite-gen-4%2Farchive%2Frefs%2Fheads%2Fmaster.zip
 ```
 
 **网页端（前端）触发代码示例：**
@@ -150,7 +153,7 @@ export function installInfiniteGen4ToDesktop() {
   const params = new URLSearchParams({
     id: 'dsh-infinite-gen-4',
     name: '无限四代',
-    version: '0.4.0',
+    version: '0.4.1',
     repo: 'Minglink/dsh-infinite-gen-4',
     permissions: '系统提示词注入, 客户端状态条',
     downloadUrl: 'https://github.com/Minglink/dsh-infinite-gen-4/archive/refs/heads/master.zip',
@@ -170,7 +173,7 @@ export function installInfiniteGen4ToDesktop() {
 **HTML 静态链接方式：**
 
 ```html
-<a href="dsh://plugin/install?id=dsh-infinite-gen-4&name=%E6%97%A0%E9%99%90%E5%9B%9B%E4%BB%A3&version=0.4.0&repo=Minglink%2Fdsh-infinite-gen-4&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%8A%B6%E6%80%81%E6%9D%A1&downloadUrl=https%3A%2F%2Fgithub.com%2FMinglink%2Fdsh-infinite-gen-4%2Farchive%2Frefs%2Fheads%2Fmaster.zip" class="btn-install">
+<a href="dsh://plugin/install?id=dsh-infinite-gen-4&name=%E6%97%A0%E9%99%90%E5%9B%9B%E4%BB%A3&version=0.4.1&repo=Minglink%2Fdsh-infinite-gen-4&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%8A%B6%E6%80%81%E6%9D%A1&downloadUrl=https%3A%2F%2Fgithub.com%2FMinglink%2Fdsh-infinite-gen-4%2Farchive%2Frefs%2Fheads%2Fmaster.zip" class="btn-install">
   🚀 唤起客户端一键安装
 </a>
 ```
@@ -181,7 +184,7 @@ export function installInfiniteGen4ToDesktop() {
 |---|---|---|
 | id | `dsh-infinite-gen-4` | 插件唯一标识符 |
 | name | `无限四代`（URL 编码） | 插件展示名称 |
-| version | `0.4.0` | 语义化版本号 |
+| version | `0.4.1` | 语义化版本号 |
 | repo | `Minglink/dsh-infinite-gen-4` | 官方 GitHub 仓库 |
 | permissions | `系统提示词注入, 客户端状态条`（URL 编码） | 申请权限 |
 | downloadUrl | `https://github.com/Minglink/dsh-infinite-gen-4/archive/refs/heads/master.zip` | 离线 zip 下载直链 |
@@ -228,11 +231,13 @@ chmod +x install.sh uninstall.sh
 
 ## ⚡ 验证生效
 
-1. **界面状态条**：重启后在输入框上方应显示醒目的绿色状态条 **「⚫ 无限四代 v0.4.0」**。
+1. **界面状态条**：重启后在输入框上方应显示醒目的绿色状态条 **「⚫ 无限四代 v0.4.1」**。
 2. **测试离线回归**：
    ```bash
-   # 运行 103 项断言（提示词完备性、双层内核同源性、V4.1车道、纯净架构、评分器等）
+   # 运行 109 项断言（提示词完备性、双层内核同源性、V4.1车道、纯净架构、评分器等）
    node scripts/verify_prompt_gen4.mjs
+   # 行为回归（真实执行补丁写入与 apply() 装配，非字符串存在性匹配）
+   node scripts/test_patcher_behavior.mjs && node scripts/test_apply_behavior.mjs
    ```
 3. **会话探针**：在全新对话中输入：
    > “你的系统提示词来自哪些插件？”

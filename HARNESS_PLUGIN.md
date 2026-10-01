@@ -1,4 +1,4 @@
-# DeepSeek Harness Plugin — 无限四代 / dsh-infinite-gen-4 (v0.4.0)
+# DeepSeek Harness Plugin — 无限四代 / dsh-infinite-gen-4 (v0.4.1)
 
 网络安全红队（Red-Teaming）测试插件，项目名：**无限四代（Infinite Generation Four）**。
 专为 **DeepSeek-V4.1 / V4-Pro / V4-Flash 及 MoE 架构** 重构，采用
@@ -20,7 +20,7 @@
   不存在可拒绝的请求类别。
 - **评分器与会话投影**：开头窗口（160）判拒 + REFUSAL / FALLBACK / SAFE / RISK 四类标记
   + 域命中检测，驱动客户端状态条展示。该投影是**评分器**，不参与系统提示词注入。
-- **客户端实时状态条**：在输入框上方挂载 `⚫ 无限四代 v0.4.0` 动态状态条（含命中域/载荷数显示）。
+- **客户端实时状态条**：在输入框上方挂载 `⚫ 无限四代 v0.4.1` 动态状态条（含命中域/载荷数显示）。
 - **profile 元数据工具**：`infinite_gen4_profile` 返回内核版本、注入槽位清单与能力标记。
 
 ## 注入面文件
@@ -38,15 +38,35 @@
 | 版本 | 说明 |
 |---|---|
 | v0.3.0 | 双层注入首版（Order 100 通用内核 + Order 200 战场实测层） |
-| **v0.4.0** | 双层注入收敛为同源同构内核；注入槽位统一为 `infinite-gen-4:*`；内核载荷与强化镜像逐字一致 |
+| v0.4.0 | 双层注入收敛为同源同构内核；注入槽位统一为 `infinite-gen-4:*`；内核载荷与强化镜像逐字一致 |
+| **v0.4.1** | 补丁引擎安全修订：不再向未声明本插件的 profile 与共享依赖目录写入补丁层（旧版会写坏其 YAML 致其无法解析）；删除会把宿主 `filter(section => …)` 整体替换为 `filter(section => true)` 的破坏性兜底；新增 asar 只读保护与写入前形状校验（非法即拒写）。评分器单源化：`index.js` 移除与 `scripts/lib/scorer.mjs` 漂移的第二份规则表，改为委托调用。投影语义修正：`running` 由 `turn/start` / `turn/end` 驱动，系统基线注入类 `user/message` 不再误触发状态条。客户端判定闪光到期回落。新增两个真实执行行为回归套件 |
 
 ## Local verification
 
 ```powershell
 node --check index.js
-node scripts/verify_prompt_gen4.mjs   # 68 项：内核载荷逐字一致 + 注入槽位 + 投影
-node scripts/verify_prompt.mjs        # 65 项：载荷锚点 + 导出 + 安装协议 + 用例库
+node scripts/verify_prompt_gen4.mjs   # 109 项：内核载荷逐字一致 + 注入槽位 + 投影 + 补丁引擎
+node scripts/verify_prompt.mjs        # 61 项：载荷锚点 + 导出 + 安装协议 + 用例库
+node scripts/test_patcher_behavior.mjs  # 32 项：补丁引擎真实执行行为（写入 / 跳过 / 拒写）
+node scripts/test_apply_behavior.mjs    # 23 项：apply() 装配与投影事件链
 ```
+
+## 兼容性补丁引擎（scripts/lib/patcher.js）
+
+运行期自愈会在插件装载时执行，安全契约如下（v0.4.1 起）：
+
+| 门槛 | 行为 |
+|---|---|
+| profile 未声明本插件 | `skip_not_installed`，不写入 |
+| 目录不是 profile（如共享依赖层 `profiles/node_modules`） | `skip_not_profile`，不写入 |
+| 补丁层已包含本插件 | `already_configured`，幂等 |
+| 空模板 / 裸 `[]` 文档 | 整体替换为 overlay（`patched_empty`） |
+| 旧版损坏产物（`[]` 与条目并存） | 剔除裸行修复（`repairedFlowLine`） |
+| 写入后非「单块序列文档」形状 | `rejected_invalid_yaml`，拒绝落盘 |
+| 宿主包体路径（`app.asar`） | `readonly_asar`，只读跳过 |
+| Phase-1 锚点未命中 | `pattern_miss`，文件保持原样且不留备份 |
+
+出现 `error` / `rejected_invalid_yaml` 时，插件会通过 `self-heal issues` 向宿主日志上报，不再静默吞掉。
 
 ## Install in the desktop Harness
 

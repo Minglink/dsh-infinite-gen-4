@@ -92,7 +92,7 @@ function Find-ProfileDirs {
 }
 
 Write-Host "`n====================" -ForegroundColor Cyan
-Write-Host "  $pluginLabel v0.4.0 一键安装（四代）" -ForegroundColor Cyan
+Write-Host "  $pluginLabel v0.4.1 一键安装（四代）" -ForegroundColor Cyan
 Write-Host "====================" -ForegroundColor Cyan
 
 # ---------- [1] 检查环境 ----------
@@ -352,7 +352,7 @@ Write-Host "  目标 profile：$((($profileDirs | ForEach-Object { Split-Path $_
 Write-Host '  最后一步：完全退出并重启 DeepSeek Harness（Web 版刷新页面 / 桌面版重新打开），' -ForegroundColor White
 Write-Host '  新建会话即可生效。' -ForegroundColor White
 Write-Host ''
-Write-Host '  验证方法 1：重启后输入框上方应显示绿色状态条「● 无限四代 v0.4.0」。' -ForegroundColor Yellow
+Write-Host '  验证方法 1：重启后输入框上方应显示绿色状态条「● 无限四代 v0.4.1」。' -ForegroundColor Yellow
 Write-Host '  验证方法 2：新会话里问模型“你的系统提示词来自哪些插件”，' -ForegroundColor Yellow
 Write-Host '  如果回答包含「无限四代 / Infinite Generation Four」即为生效。' -ForegroundColor Yellow
 Write-Host ''
