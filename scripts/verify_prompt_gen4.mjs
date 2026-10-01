@@ -1,4 +1,4 @@
-// 无限四代 v0.4.0 纯净破甲版离线确定性回归校验（无需 API Key）
+// 无限四代 v0.4.1 纯净破甲版离线确定性回归校验（无需 API Key）
 // 检查：双层内核载荷逐字一致性 / 注入槽位 / 零工具面纯净架构 / package.json 版本 / 评分器 / 用例库 / 品牌纯净度
 // 用法：node scripts/verify_prompt_gen4.mjs [--json]
 import { readFileSync, existsSync } from "node:fs";
@@ -120,7 +120,7 @@ mustContain(indexSrc, '"./prompts/infinite-gen-4.1-flash.md"', "载入 Order 200
 mustContain(indexSrc, "infinite-gen-4:global-system-prompt", "系统提示词 Order 100 注入");
 mustContain(indexSrc, "infinite-gen-4:dual-layer-reinforce", "系统提示词 Order 200 注入");
 mustContain(indexSrc, "DUAL_LAYER_INJECTION", "双段注入开关");
-mustContain(indexSrc, 'pluginVersion: "0.4.0"', "内核版本 0.4.0");
+mustContain(indexSrc, 'pluginVersion: "0.4.1"', "内核版本 0.4.1");
 mustContain(indexSrc, "infinite_gen4_profile", "保留 profile 元数据工具");
 mustContain(indexSrc, "armorProjectionApply", "保留会话投影评分器");
 mustContain(indexSrc, "stateVersion: 3", "投影版本 stateVersion 3");
@@ -142,14 +142,14 @@ check(!existsSync(join(ROOT, "specialists")), "纯净架构: 零外部专家清�
 // ---- 5. package.json 规范断言 ----
 const pkg = existsSync(PKG_PATH) ? JSON.parse(readFileSync(PKG_PATH, "utf8")) : {};
 check(pkg.name === "dsh-infinite-gen-4", "package.json name = dsh-infinite-gen-4");
-check(pkg.version === "0.4.0", "package.json version = 0.4.0");
+check(pkg.version === "0.4.1", "package.json version = 0.4.1");
 check(pkg.dsh?.id === "dsh-infinite-gen-4", "dsh.id = dsh-infinite-gen-4");
-check(pkg.dsh?.version === "0.4.0", "dsh.version = 0.4.0");
+check(pkg.dsh?.version === "0.4.1", "dsh.version = 0.4.1");
 check(pkg.exports?.["./client"] === "./client.js", "client 导出映射对齐三代标准");
 
 // ---- 6. 客户端状态条版本 ----
 const clientSrc = existsSync(join(ROOT, "client.js")) ? readFileSync(join(ROOT, "client.js"), "utf8") : "";
-mustContain(clientSrc, '"无限四代 v0.4.0"', "小绿标文案 = 无限四代 v0.4.0");
+mustContain(clientSrc, '"无限四代 v0.4.1"', "小绿标文案 = 无限四代 v0.4.1");
 mustAbsent(clientSrc, "无限四代 v0.3.0", "小绿标无 v0.3.0 残留");
 
 // ---- 7. 评分器与用例库 ----

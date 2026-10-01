@@ -188,10 +188,10 @@ step "安装完成"
 
 cat <<EOF
 
-  ✔ $PLUGIN_LABEL v0.4.0 已安装！
+  ✔ $PLUGIN_LABEL v0.4.1 已安装！
   目标 profile：$(printf '%s ' "${PROFILE_DIRS[@]}" | sed 's/ *$//')
   最后一步：重启 DeepSeek Harness（Web 版刷新页面 / 桌面版重新打开），新建会话即可生效。
-  验证方法 1：重启后输入框上方应显示绿色状态条「● 无限四代 v0.4.0」。
+  验证方法 1：重启后输入框上方应显示绿色状态条「● 无限四代 v0.4.1」。
   验证方法 2：新会话里问模型“你的系统提示词来自哪些插件”，
              回答包含「无限四代 / Infinite Generation Four」即为生效。
   卸载方法：运行 ./uninstall.sh，或查看 README。

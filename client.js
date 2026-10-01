@@ -75,6 +75,16 @@
             }
           }, [armor]);
 
+          // 闪光到期需要重渲染驱动：到期后判定文案回落到常态显示，
+          // 否则角标会把上一次判定一直挂到下一帧投影更新
+          react.useEffect(function () {
+            if (lastVerdictRef.current === null) return undefined;
+            var remaining = flashUntilRef.current - Date.now();
+            if (remaining <= 0) return undefined;
+            var timer = setTimeout(function () { setTick(Date.now()); }, remaining + 50);
+            return function () { clearTimeout(timer); };
+          });
+
           var running = !!(armor && armor.running);
           var words = armor && Array.isArray(armor.words) ? armor.words : [];
           var risk = armor && Array.isArray(armor.risk) ? armor.risk : [];
@@ -82,7 +92,7 @@
           var showVerdict = !running && lastVerdictRef.current !== null &&
             Date.now() < flashUntilRef.current;
 
-          var text = "无限四代 v0.4.0";
+          var text = "无限四代 v0.4.1";
           var dotStyle = Object.assign({}, DOT_STYLE);
           var badgeStyle = Object.assign({}, BADGE_STYLE);
 
@@ -107,7 +117,7 @@
             { style: WRAP_STYLE },
             react.createElement(
               "div",
-              { style: badgeStyle, "data-armor": "on", title: "无限四代 v0.4.0" },
+              { style: badgeStyle, "data-armor": "on", title: "无限四代 v0.4.1" },
               react.createElement("span", { style: dotStyle }),
               react.createElement("span", null, text)
             )
